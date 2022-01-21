@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "04517f49-6bc0-4fb5-a8a7-3d5c62d48a47",
+		"name": "Mentor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a mentor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sarthak\",\r\n    \"expertise\": \"Frontend\",\r\n    \"experience\": 2,\r\n    \"students\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TASK}}/mentors",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"mentors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Karun\",\r\n    \"email\": \"karun@gmail.com\",\r\n    \"batch\": \"B25WD\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TASK}}/students",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign a mentor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"students\": [\"61e9606bad3524d03ec77773\" ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TASK}}/mentors/assign/61e95dd5b3cdf88eac0c1886",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"mentors",
+						"assign",
+						"61e95dd5b3cdf88eac0c1886"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unassign a mentor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"students\": \"61e9606bad3524d03ec77773\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TASK}}/mentors/unassign/61e95dd5b3cdf88eac0c1886",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"mentors",
+						"unassign",
+						"61e95dd5b3cdf88eac0c1886"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get students under a mentor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TASK}}/mentors/61e95dd5b3cdf88eac0c1886",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"mentors",
+						"61e95dd5b3cdf88eac0c1886"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TASK}}/students/61e96010ad3524d03ec77769",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"students",
+						"61e96010ad3524d03ec77769"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign a student to mentor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mentor\": \"61e95d89b3cdf88eac0c1880\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TASK}}/students/assign/61e9606bad3524d03ec77773",
+					"host": [
+						"{{TASK}}"
+					],
+					"path": [
+						"students",
+						"assign",
+						"61e9606bad3524d03ec77773"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
